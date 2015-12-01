@@ -1,0 +1,34 @@
+IAP版本： V1.2  
+适配BootLoader：IAP_BootLoader_F429_V1.2
+
+
+移植说明：
+
+IAP文件夹整体移植，主分支下建立IAP文件夹并加入2个C文件两个头文件
+
+
+#include "iapfun.h"	在app.h中头文件声明
+
+
+IAP_AddOffset();	放在main.c中main（）		err声明之后
+
+IAP_ProState();		放在app.c中AppTaskCreate（）	err声明之后
+
+
+
+编译说明：
+
+主程序编译：
+宏定义添加：	MAINAPP
+修改IROM1：	0x0801 0000
+
+备用程序编译：
+宏定义添加：	SPAREAPP
+修改IROM1：	0x0806 0000
+
+
+生成.bin文件的方式：
+fromelf.exe  --bin -o   .\Flash\output.bin .\Flash\Obj\output.axf
+
+
+
