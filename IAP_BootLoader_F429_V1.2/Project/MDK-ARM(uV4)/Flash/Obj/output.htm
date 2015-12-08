@@ -3,9 +3,9 @@
 <title>Static Call Graph - [.\Flash\Obj\output.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Flash\Obj\output.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5040049: Last Updated: Fri Nov 20 15:47:22 2015
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5040049: Last Updated: Tue Dec 08 15:07:20 2015
 <BR><P>
-<H3>Maximum Stack Usage =       1272 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =       1280 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 main &rArr; Iap_Write &rArr; LcdDispValue &rArr; __c89vsnprintf
 <P>
@@ -681,17 +681,17 @@ Global Symbols
 <P><STRONG><a name="[2]"></a>HardFault_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f4xx_it.o(i.HardFault_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f429_439xx.o(RESET)
 </UL>
-<P><STRONG><a name="[90]"></a>Iap_Write</STRONG> (Thumb, 452 bytes, Stack size 1056 bytes, iap.o(i.Iap_Write))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1272<LI>Call Chain = Iap_Write &rArr; LcdDispValue &rArr; __c89vsnprintf
+<P><STRONG><a name="[90]"></a>Iap_Write</STRONG> (Thumb, 502 bytes, Stack size 1064 bytes, iap.o(i.Iap_Write))
+<BR><BR>[Stack]<UL><LI>Max Depth = 1280<LI>Call Chain = Iap_Write &rArr; LcdDispValue &rArr; __c89vsnprintf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ITConfig
-<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdDispValue
+<BR>[Calls]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ITConfig
+<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdDispValue
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Iap_load
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_ms
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CRC_GetVal
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;STMFLASH_Write
+<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -715,13 +715,14 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[93]"></a>LcdDispValue</STRONG> (Thumb, 172 bytes, Stack size 192 bytes, lcd.o(i.LcdDispValue))
+<P><STRONG><a name="[92]"></a>LcdDispValue</STRONG> (Thumb, 172 bytes, Stack size 192 bytes, lcd.o(i.LcdDispValue))
 <BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = LcdDispValue &rArr; __c89vsnprintf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Send_LCD
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__c89vsnprintf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Iap_Write
+<BR>[Called By]<UL><LI><a href="#[27]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM3_IRQHandler
+<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Iap_Write
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -829,7 +830,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SendData
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetFlagStatus
 </UL>
-<BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdDispValue
+<BR>[Called By]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdDispValue
 </UL>
 
 <P><STRONG><a name="[66]"></a>SystemInit</STRONG> (Thumb, 88 bytes, Stack size 8 bytes, system_stm32f4xx.o(i.SystemInit))
@@ -845,19 +846,20 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TimeBaseInit
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_Init
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB1PeriphClockCmd
-<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ITConfig
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ITConfig
 <LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Cmd
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSPInit
 </UL>
 
-<P><STRONG><a name="[27]"></a>TIM3_IRQHandler</STRONG> (Thumb, 90 bytes, Stack size 8 bytes, timer.o(i.TIM3_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = TIM3_IRQHandler &rArr; TIM_GetITStatus
+<P><STRONG><a name="[27]"></a>TIM3_IRQHandler</STRONG> (Thumb, 128 bytes, Stack size 16 bytes, timer.o(i.TIM3_IRQHandler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = TIM3_IRQHandler &rArr; LcdDispValue &rArr; __c89vsnprintf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_GetITStatus
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ClearITPendingBit
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
 <LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
+<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdDispValue
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f429_439xx.o(RESET)
 </UL>
@@ -867,7 +869,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TimeBaseInit
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_Init
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB1PeriphClockCmd
-<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ITConfig
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ITConfig
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSPInit
 </UL>
@@ -897,7 +899,7 @@ Global Symbols
 <LI><a href="#[27]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM3_IRQHandler
 </UL>
 
-<P><STRONG><a name="[92]"></a>TIM_ITConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f4xx_tim.o(i.TIM_ITConfig))
+<P><STRONG><a name="[93]"></a>TIM_ITConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f4xx_tim.o(i.TIM_ITConfig))
 <BR><BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM4Init
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM3Init
 <LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Iap_Write
@@ -1105,7 +1107,7 @@ Global Symbols
 <P><STRONG><a name="[9b]"></a>__c89vsnprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0vsnprintf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __c89vsnprintf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdDispValue
+<BR>[Called By]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdDispValue
 </UL>
 
 <P><STRONG><a name="[d1]"></a>vsnprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0vsnprintf), UNUSED)
@@ -1119,17 +1121,17 @@ Global Symbols
 <P><STRONG><a name="[68]"></a>fputc</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, driverusart.o(i.fputc))
 <BR>[Address Reference Count : 1]<UL><LI> printfb.o(i.__0printf$bare)
 </UL>
-<P><STRONG><a name="[65]"></a>main</STRONG> (Thumb, 384 bytes, Stack size 0 bytes, main.o(i.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1272<LI>Call Chain = main &rArr; Iap_Write &rArr; LcdDispValue &rArr; __c89vsnprintf
+<P><STRONG><a name="[65]"></a>main</STRONG> (Thumb, 418 bytes, Stack size 0 bytes, main.o(i.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 1280<LI>Call Chain = main &rArr; Iap_Write &rArr; LcdDispValue &rArr; __c89vsnprintf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ReceiveData
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ITConfig
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetFlagStatus
-<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ITConfig
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ITConfig
 <LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Cmd
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;STMFLASH_WriteWord
 <LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;STMFLASH_ReadWord
-<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdDispValue
+<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdDispValue
 <LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Iap_wait
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Iap_load
 <LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Iap_Write

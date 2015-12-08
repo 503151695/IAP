@@ -2,7 +2,7 @@
 #include "softreset.h"
 #include "iap.h"
 
-
+extern uint8_t u08_UpdateFlag;
 /************************
 *函数名称：TIM3Init
 *函数功能：通用定时器3中断初始化
@@ -47,7 +47,7 @@ void TIM3_IRQHandler(void)
 	{
 			TIM_ClearITPendingBit(TIM3, TIM_IT_Update  );  
 			Tick_Cnt++;
-		
+			
 			s_u08_HardWareWDGFlg = ~s_u08_HardWareWDGFlg;
 			if (s_u08_HardWareWDGFlg)
 			{
@@ -58,6 +58,10 @@ void TIM3_IRQHandler(void)
 			{
 				HARDWARE_WDG_L;
 				GREEN_LED_OFF;
+			}
+			if(u08_UpdateFlag == 0)
+			{
+				LcdDispValue(1,280,10,"%ds  ",31-Tick_Cnt/2);
 			}
 
 	}
@@ -98,15 +102,6 @@ void TIM4_IRQHandler(void)
 		{
 			TIM_ClearITPendingBit(TIM4, TIM_IT_Update  ); 
 			Watch_Cnt++;
-//			if(Watch_Cnt>WatchTime)
-//			{
-//					//SoftReset();
-//					printf("#F7C|HEARTON*");
-//					Delay_ms(50);
-//					printf("#SPAREAPP*\r\n");
-//					Delay_ms(50);
-//					Iap_load(APP_ADDR2);				//启用备份区程序
-//			}
 
 		}
 }

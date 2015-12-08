@@ -22,7 +22,9 @@
 #include "iap.h"
 
 
-
+uint8_t u08_UpdateFlag = 0;
+uint8_t u08_UpdateOKFlag = 0;
+uint8_t u08_NetOnlineFlag = 0;
 /*
 *********************************************************************************************************
 *	º¯ Êý Ãû: main
@@ -33,9 +35,6 @@
 */
 int main(void)
 {
-	uint8_t u08_UpdateFlag = 0;
-	uint8_t u08_UpdateOKFlag = 0;
-	uint8_t u08_NetOnlineFlag = 0;
 	uint8_t temp = 0;
 	
   BSPInit();

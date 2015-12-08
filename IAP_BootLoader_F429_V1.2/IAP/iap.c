@@ -33,6 +33,7 @@ void Iap_Write(uint32_t addr)
 	{
 		while((buf_cnt & 0x8000) == 0)													//等待数据接收完毕
 		{
+			LcdDispValue(1,280,10,"%ds  ",60-Watch_Cnt/2);
 			if(Watch_Cnt>WatchTime)	//--WatchTime没有接收到数据转入备用程序
 			{
 				TIM_ITConfig(TIM4,TIM_IT_Update,DISABLE );	
@@ -50,8 +51,8 @@ void Iap_Write(uint32_t addr)
 		Watch_Cnt = 0;	//--喂模拟窗口狗
 		//解析数据
 		data_len = (uint32_t)usart_buf[1] << 8 | usart_buf[0];				//获取data有效长度
-//		if(data_len > 1024+8)
-//			data_len = 1024+8;
+		if(data_len > 1024)	//--
+			data_len = 1024;
 		for(temp = 2; temp < data_len + 2; temp++)								//从第二位开始拷贝数据
 		{
 			data_write[temp - 2] = usart_buf[temp];
